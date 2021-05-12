@@ -1,0 +1,21 @@
+{
+  "name": "copytoken",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "clipboardy": "^2.3.0",
+    "dotenv": "^9.0.2",
+    "puppeteer": "^9.1.1"
+  },
+  "devDependencies": {
+    "prettier": "2.3.0"
+  }
+}
