@@ -16,9 +16,7 @@ module.exports.getEnv = (envToLoad) => {
   if (!doesFileExist(filePath)) {
     throw new Error(`The file does not exist: ${filePath}`);
   }
-  require('dotenv').config({
-    path: path.resolve(process.cwd(), `.env.${envToLoad}`),
-  });
+  require('dotenv').config({ path: filePath });
   return process.env;
 };
 
