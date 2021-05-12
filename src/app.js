@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 const { getEnv, getTopbar, getAccessToken, copyToClipboard, waitForBtnWithTxt } = require('./helpers');
 const puppeteer = require('puppeteer');
 const envToLoad = process.argv[2] || 'test';

@@ -32,7 +32,7 @@ By linking it globally, it's possible to run command `copytoken` in the terminal
 #### How to remove globally?
 
 ``` sh
-# npm unlink
+# npm unlink copytoken
 ```
 
 #### Test environment
