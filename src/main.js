@@ -1,10 +1,10 @@
-#!/usr/bin/env node
-const { getEnv, getTopbar, getAccessToken, copyToClipboard, waitForBtnWithTxt } = require('./helpers');
+const { getEnv, getEnvToLoad } = require('./helpers');
+const { getTopbar, getAccessToken, copyToClipboard, waitForBtnWithTxt } = require('./helpers');
 const puppeteer = require('puppeteer');
-const envToLoad = process.argv[2] || 'test';
-const env = getEnv(envToLoad);
 
-(async () => {
+module.exports.main = async (dirName) => {
+  const envToLoad = getEnvToLoad();
+  const env = getEnv(envToLoad, dirName);
   console.log(`Getting access token in ${envToLoad.toUpperCase()}...`);
 
   const browser = await puppeteer.launch({ headless: true });
@@ -24,4 +24,4 @@ const env = getEnv(envToLoad);
   console.log(`Access token in ${envToLoad.toUpperCase()}: ${accessToken}`);
 
   await browser.close();
-})();
+};

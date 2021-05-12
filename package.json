@@ -2,12 +2,12 @@
   "name": "copytoken",
   "version": "1.0.0",
   "description": "A puppeteer script for copying a token to your clipboard.",
-  "main": "src/app.js",
+  "main": "./app.js",
   "bin": {
-    "copytoken": "src/app.js"
+    "copytoken": "./app.js"
   },
   "scripts": {
-    "start": "node src/app.js",
+    "start": "node ./app.js",
     "postinstall": "cp -n .env.example .env.test && cp -n .env.example .env.prod || exit 0"
   },
   "keywords": [],

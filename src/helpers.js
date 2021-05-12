@@ -1,8 +1,7 @@
-const path = require('path');
 const fs = require('fs');
 const clipboardy = require('clipboardy');
 
-const doesFileExist = (filePath) => {
+module.exports.doesFileExist = (filePath) => {
   try {
     const fileExist = fs.existsSync(filePath);
     return fileExist ? true : false;
@@ -11,9 +10,11 @@ const doesFileExist = (filePath) => {
   }
 };
 
-module.exports.getEnv = (envToLoad) => {
-  const filePath = path.resolve(process.cwd(), `.env.${envToLoad}`);
-  if (!doesFileExist(filePath)) {
+module.exports.getEnvToLoad = () => process.argv[2] || 'test';
+
+module.exports.getEnv = (envToLoad, dirName) => {
+  const filePath = `${dirName}/.env.${envToLoad}`;
+  if (!this.doesFileExist(filePath)) {
     throw new Error(`The file does not exist: ${filePath}`);
   }
   require('dotenv').config({ path: filePath });
