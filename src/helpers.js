@@ -46,3 +46,10 @@ module.exports.waitForBtnWithTxt = async ({ page, txt }) => {
 };
 
 module.exports.copyToClipboard = (txt) => clipboardy.writeSync(txt);
+
+module.exports.isRequestCss = (req) => req.resourceType() === 'stylesheet';
+module.exports.isRequestFont = (req) => req.resourceType() === 'font';
+module.exports.isRequestImage = (req) => req.resourceType() === 'image';
+
+module.exports.isRequestStyling = (req) =>
+  this.isRequestCss(req) || this.isRequestFont(req) || this.isRequestImage(req);
